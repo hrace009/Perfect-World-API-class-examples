@@ -2,6 +2,7 @@
 A php script to use on Perfect World gaming environment.
 
 Original made by <a href="http://forum.ragezone.com/members/861743.html">Goodlookinguy</a> on <a href="http://forum.ragezone.com/f694/php-perfect-world-api-class-818826/">RageZone</a>
+Documentation Click <a href="https://hrace009.github.io/Perfect-World-API-class-examples/">Here</a>
 
 Message From Creator:<br>
 > I was working on this php-based Perfect World API months ago. Now that I have time again, I decided to pick this project of mine again...and then just decided to rewrite everything into a better system all today.
