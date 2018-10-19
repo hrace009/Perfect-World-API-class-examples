@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function () {
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">42</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                    <i class="icon-list-alt"></i>&#160;Markers <span
+                                        class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                    <i class="icon-list-alt"></i>&#160;Deprecated <span
+                                        class="label label-info pull-right">3</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+    <section class="row-fluid">
+        <div class="span2 sidebar">
+            <div class="accordion" style="margin-bottom: 0">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1479478375"></a>
+                        <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+                    </div>
+                    <div id="namespace-1479478375" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+
+
+                            <ul>
+                                <li class="class"><a href="../classes/MonkeyDatabase.html">MonkeyDatabase</a></li>
+                                <li class="class"><a href="../classes/MonkeyFilter.html">MonkeyFilter</a></li>
+                                <li class="class"><a href="../classes/MonkeyList.html">MonkeyList</a></li>
+                                <li class="class"><a href="../classes/MonkeyMap.html">MonkeyMap</a></li>
+                                <li class="class"><a href="../classes/MonkeyStack.html">MonkeyStack</a></li>
+                                <li class="class"><a href="../classes/MonkeyString.html">MonkeyString</a></li>
+                                <li class="class"><a href="../classes/PerfectWorldAPI.html">PerfectWorldAPI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                        <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                    </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i
+                            class="icon-code"></i></a>
+
+                    <h1>
+                        <small>\</small>
+                        MonkeyFilter
+                    </h1>
+                    <p><em></em></p>
+
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                <a href="../classes/MonkeyFilter.html#method___construct"
+                                   class="">__construct()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_Get" class="">Get()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_Create" class="">Create()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_Instance" class="">Instance()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_SetFilter" class="">SetFilter()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_AddFilter" class="">AddFilter()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_RemoveFilter"
+                                   class="">RemoveFilter()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_FilterText" class="">FilterText()</a><br/>
+                            </section>
+                            <section class="span4">
+                                <a href="../classes/MonkeyFilter.html#property_Instance" class="">$Instance</a><br/>
+                            </section>
+                            <section class="span4">
+                                <a href="../classes/MonkeyFilter.html#constant_HTML_ENTITY"
+                                   class="">HTML_ENTITY</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_MYSQL_SAFE" class="">MYSQL_SAFE</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_DISABLE_NULL"
+                                   class="">DISABLE_NULL</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_HTML_BRACKETS" class="">HTML_BRACKETS</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_HTML_SLASHES"
+                                   class="">HTML_SLASHES</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_DISABLE_MULTI_BYTE" class="">DISABLE_MULTI_BYTE</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_HTML_DOLLAR"
+                                   class="">HTML_DOLLAR</a><br/>
+                                <a href="../classes/MonkeyFilter.html#constant_DEFAULT_FILTER"
+                                   class="">DEFAULT_FILTER</a><br/>
+                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                <em>No protected methods found</em>
+                            </section>
+                            <section class="span4">
+                                <em>No protected properties found</em>
+                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                <a href="../classes/MonkeyFilter.html#method_filterDisableMultibyte" class="">filterDisableMultibyte()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterNull" class="">filterNull()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterHtmlEntities" class="">filterHtmlEntities()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterHtmlDollar" class="">filterHtmlDollar()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterHtmlSlashes" class="">filterHtmlSlashes()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterHtmlBrackets" class="">filterHtmlBrackets()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterMysqlSafe"
+                                   class="">filterMysqlSafe()</a><br/>
+                                <a href="../classes/MonkeyFilter.html#method_filterForceMultibyte" class="deprecated">filterForceMultibyte()</a><br/>
+                            </section>
+                            <section class="span4">
+                                <a href="../classes/MonkeyFilter.html#property__filter" class="">$_filter</a><br/>
+                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+
+
+                    <dl>
+                        <dt>File</dt>
+                        <dd><a href="../files/libraries.Monkey.MonkeyFilter.html">
+                            <div class="path-wrapper">libraries\Monkey\MonkeyFilter.php</div>
+                        </a></dd>
+                        <dt>Package</dt>
+                        <dd>
+                            <div class="namespace-wrapper">Default</div>
+                        </dd>
+                        <dt>Class hierarchy</dt>
+                        <dd class="hierarchy">
+                            <div class="namespace-wrapper">\MonkeyFilter</div>
+                        </dd>
+
+
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <a id="constants" name="constants"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Constants</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_HTML_ENTITY" name="constant_HTML_ENTITY" class="anchor"></a>
+                    <article id="constant_HTML_ENTITY" class="constant">
+                        <h3 class="">HTML_ENTITY</h3>
+                        <pre class="signature">HTML_ENTITY</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_MYSQL_SAFE" name="constant_MYSQL_SAFE" class="anchor"></a>
+                    <article id="constant_MYSQL_SAFE" class="constant">
+                        <h3 class="">MYSQL_SAFE</h3>
+                        <pre class="signature">MYSQL_SAFE</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DISABLE_NULL" name="constant_DISABLE_NULL" class="anchor"></a>
+                    <article id="constant_DISABLE_NULL" class="constant">
+                        <h3 class="">DISABLE_NULL</h3>
+                        <pre class="signature">DISABLE_NULL</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_HTML_BRACKETS" name="constant_HTML_BRACKETS" class="anchor"></a>
+                    <article id="constant_HTML_BRACKETS" class="constant">
+                        <h3 class="">HTML_BRACKETS</h3>
+                        <pre class="signature">HTML_BRACKETS</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_HTML_SLASHES" name="constant_HTML_SLASHES" class="anchor"></a>
+                    <article id="constant_HTML_SLASHES" class="constant">
+                        <h3 class="">HTML_SLASHES</h3>
+                        <pre class="signature">HTML_SLASHES</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DISABLE_MULTI_BYTE" name="constant_DISABLE_MULTI_BYTE" class="anchor"></a>
+                    <article id="constant_DISABLE_MULTI_BYTE" class="constant">
+                        <h3 class="">DISABLE_MULTI_BYTE</h3>
+                        <pre class="signature">DISABLE_MULTI_BYTE</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_HTML_DOLLAR" name="constant_HTML_DOLLAR" class="anchor"></a>
+                    <article id="constant_HTML_DOLLAR" class="constant">
+                        <h3 class="">HTML_DOLLAR</h3>
+                        <pre class="signature">HTML_DOLLAR</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DEFAULT_FILTER" name="constant_DEFAULT_FILTER" class="anchor"></a>
+                    <article id="constant_DEFAULT_FILTER" class="constant">
+                        <h3 class="">DEFAULT_FILTER</h3>
+                        <pre class="signature">DEFAULT_FILTER</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+
+            <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="property_Instance" name="property_Instance" class="anchor"></a>
+                    <article class="property">
+                        <h3 class="public ">$Instance</h3>
+                        <pre class="signature">$Instance : </pre>
+                        <p><em></em></p>
+
+
+                        <h4>Type</h4>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="property__filter" name="property__filter" class="anchor"></a>
+                    <article class="property">
+                        <h3 class="private ">$_filter</h3>
+                        <pre class="signature">$_filter : </pre>
+                        <p><em></em></p>
+
+
+                        <h4>Type</h4>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+
+            <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method___construct" name="method___construct" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">__construct()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">__construct(  <span
+                                class="argument">$filter</span>) </pre>
+                        <p><em></em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td></td>
+                                <td>$filter</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_Get" name="method_Get" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">Get()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">Get() : \MonkeyFilter</pre>
+                        <p><em>Return singleton instance of class</em></p>
+
+
+                        <h4>Returns</h4>
+                        <a href="../classes/MonkeyFilter.html">\MonkeyFilter</a>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <span class="label label-info">static</span>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_Create" name="method_Create" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">Create()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">Create(integer  <span class="argument">$filter = \MonkeyFilter::DEFAULT_FILTER</span>) : \MonkeyFilter</pre>
+                        <p><em>Create new instance of class with default filter</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$filter</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        <a href="../classes/MonkeyFilter.html">\MonkeyFilter</a>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <span class="label label-info">static</span>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_Instance" name="method_Instance" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">Instance()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">Instance() : \MonkeyFilter</pre>
+                        <p><em>Return singleton instance of class</em></p>
+
+
+                        <h4>Returns</h4>
+                        <a href="../classes/MonkeyFilter.html">\MonkeyFilter</a>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <span class="label label-info">static</span>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_SetFilter" name="method_SetFilter" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">SetFilter()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">SetFilter(integer  <span class="argument">$filter</span>) : void</pre>
+                        <p><em>Set text filter</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$filter</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_AddFilter" name="method_AddFilter" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">AddFilter()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">AddFilter(integer  <span class="argument">$filter</span>) : void</pre>
+                        <p><em>Add filter to text filter</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$filter</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_RemoveFilter" name="method_RemoveFilter" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">RemoveFilter()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">RemoveFilter(integer  <span class="argument">$filter</span>) : void</pre>
+                        <p><em>Remove filter from text filter</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$filter</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_FilterText" name="method_FilterText" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">FilterText()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">FilterText(string  <span class="argument">$input</span>) : string</pre>
+                        <p><em>Text will be filtered through filter settings and returned</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterDisableMultibyte" name="method_filterDisableMultibyte" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterDisableMultibyte()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterDisableMultibyte(string  <span
+                                class="argument">$input</span>) : string</pre>
+                        <p><em>Disable multibyte encoding by forcing incoming character set to ASCII</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterNull" name="method_filterNull" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterNull()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterNull(string  <span class="argument">$input</span>) : string</pre>
+                        <p><em>Filter out \00 0x00, A.K.A. null.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterHtmlEntities" name="method_filterHtmlEntities" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterHtmlEntities()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterHtmlEntities(string  <span
+                                class="argument">$input</span>) </pre>
+                        <p><em>Filter through HTML Entities ignoring brackets.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterHtmlDollar" name="method_filterHtmlDollar" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterHtmlDollar()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterHtmlDollar(string  <span
+                                class="argument">$input</span>) : string</pre>
+                        <p><em>Filter $ symbol to HTML entity</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterHtmlSlashes" name="method_filterHtmlSlashes" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterHtmlSlashes()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterHtmlSlashes(string  <span
+                                class="argument">$input</span>) : string</pre>
+                        <p><em>Transform slashes (back and forward and dash) to HTML entities</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterHtmlBrackets" name="method_filterHtmlBrackets" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterHtmlBrackets()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterHtmlBrackets(string  <span
+                                class="argument">$input</span>) : string</pre>
+                        <p><em>Transforms all brackets ({, }, (, ), &lt;, &gt;, [, ]) to HTML entities</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterMysqlSafe" name="method_filterMysqlSafe" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">filterMysqlSafe()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterMysqlSafe(string  <span
+                                class="argument">$input</span>) : string</pre>
+                        <p><em>Filter for MySQL safe. It is recommended that other filters also be used to ensure
+                            safety.</em></p>
+                        <p>This filter also requires an active MySQL connection or else it will skip this safety
+                            measure.</p>
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td><p>$input</p></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_filterForceMultibyte" name="method_filterForceMultibyte" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private deprecated">filterForceMultibyte()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">filterForceMultibyte(string  <span
+                                class="argument">$input</span>) : string</pre>
+                        <p><em>Force incoming character set to UTF-8</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <aside class="alert alert-block alert-error">
+                        <h4>Deprecated since 2/10/2012</h4>
+
+                    </aside>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label"
+         aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">MonkeyFilter.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/libraries\Monkey\MonkeyFilter.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr/>
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on October 19th, 2018 at 04:40.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

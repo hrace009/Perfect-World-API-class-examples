@@ -1,0 +1,54 @@
+<?php
+
+class MonkeyStack extends MonkeyList
+{
+    /**
+     * Returns the item at the stack index
+     *
+     * @param    int $index
+     * @return    object
+     */
+    public function Get($index)
+    {
+        return $this->_list[$index];
+    }
+
+    /**
+     * Sets the value at the specified index
+     *
+     * @param    int $index
+     * @param    object $object
+     */
+    public function Set($index, $object)
+    {
+        $this->_list[$index] = $object;
+    }
+
+    /**
+     * Pushes a value onto the end of the stack
+     *
+     * @param    object $object
+     */
+    public function Push($object)
+    {
+        if (func_num_args() === 1) {
+            $this->_list[] = $object;
+        } elseif (func_num_args() > 1) {
+            $args = func_get_args();
+            foreach ($args as $list => $arg) {
+                $this->_list[] = $arg;
+            }
+        }
+    }
+
+    /**
+     * Pops the value on the end of the stack
+     *
+     * @return    object
+     */
+    public function Pop()
+    {
+        return array_pop($this->_list);
+    }
+}
+

@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function () {
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">42</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                    <i class="icon-list-alt"></i>&#160;Markers <span
+                                        class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                    <i class="icon-list-alt"></i>&#160;Deprecated <span
+                                        class="label label-info pull-right">3</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+    <section class="row-fluid">
+        <div class="span2 sidebar">
+            <div class="accordion" style="margin-bottom: 0">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-940972811"></a>
+                        <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+                    </div>
+                    <div id="namespace-940972811" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+
+
+                            <ul>
+                                <li class="class"><a href="../classes/MonkeyDatabase.html">MonkeyDatabase</a></li>
+                                <li class="class"><a href="../classes/MonkeyFilter.html">MonkeyFilter</a></li>
+                                <li class="class"><a href="../classes/MonkeyList.html">MonkeyList</a></li>
+                                <li class="class"><a href="../classes/MonkeyMap.html">MonkeyMap</a></li>
+                                <li class="class"><a href="../classes/MonkeyStack.html">MonkeyStack</a></li>
+                                <li class="class"><a href="../classes/MonkeyString.html">MonkeyString</a></li>
+                                <li class="class"><a href="../classes/PerfectWorldAPI.html">PerfectWorldAPI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                        <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                    </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i
+                            class="icon-code"></i></a>
+
+                    <h1>
+                        <small>\</small>
+                        PerfectWorldAPI
+                    </h1>
+                    <p><em>Perfect World v1.2.6 php API</em></p>
+                    <p>Extra credits to das7002, tbnanubis, renan7899, twiggy3452, Drakaer, Ronny</p>
+
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                <a href="../classes/PerfectWorldAPI.html#method___construct"
+                                   class="">__construct()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_Instance" class="">Instance()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_PrintSessionDebugData" class="">PrintSessionDebugData()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_AddUser" class="">AddUser()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_UsernameIsValid" class="">UsernameIsValid()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_UsernameExists" class="">UsernameExists()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_EmailIsValid"
+                                   class="">EmailIsValid()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_EmailExists"
+                                   class="">EmailExists()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_SetPassword"
+                                   class="">SetPassword()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetUsername"
+                                   class="">GetUsername()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetUserData"
+                                   class="">GetUserData()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_IsLoggedIn"
+                                   class="">IsLoggedIn()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetUserID" class="">GetUserID()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_AddGMByCharName" class="">AddGMByCharName()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_AddGM" class="">AddGM()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_AddGMByID" class="">AddGMByID()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_AddGMByUsername" class="">AddGMByUsername()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_Login" class="">Login()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_SetLogin" class="">SetLogin()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_LoginByEmail"
+                                   class="">LoginByEmail()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_IsGM" class="">IsGM()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_Logout" class="">Logout()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_SetCharacter"
+                                   class="">SetCharacter()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_FillUserCharData" class="">FillUserCharData()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetUserCharIDs" class="">GetUserCharIDs()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetGMList" class="">GetGMList()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetOnlineCharList" class="deprecated">GetOnlineCharList()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetOnlineCharacterList"
+                                   class="deprecated">GetOnlineCharacterList()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetCharList"
+                                   class="">GetCharList()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetCharacterName" class="">GetCharacterName()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetCharData"
+                                   class="">GetCharData()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_GetCharID" class="">GetCharID()</a><br/>
+                            </section>
+                            <section class="span4">
+                                <a href="../classes/PerfectWorldAPI.html#property_Instance" class="">$Instance</a><br/>
+                            </section>
+                            <section class="span4">
+                                <a href="../classes/PerfectWorldAPI.html#constant_DATABASE_HOST"
+                                   class="">DATABASE_HOST</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_DATABASE_USERNAME" class="">DATABASE_USERNAME</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_DATABASE_PASSWORD" class="">DATABASE_PASSWORD</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_DATABASE_NAME"
+                                   class="">DATABASE_NAME</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_SESSION_NAME"
+                                   class="">SESSION_NAME</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_SESSION_FINGERPRINT" class="">SESSION_FINGERPRINT</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_SESSION_USER_ID" class="">SESSION_USER_ID</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_SESSION_CHAR_ID" class="">SESSION_CHAR_ID</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_SESSION_IS_GM"
+                                   class="">SESSION_IS_GM</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_MSG_MALFORMED_QUERY" class="">MSG_MALFORMED_QUERY</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_MSG_SESSION_COLLISION" class="">MSG_SESSION_COLLISION</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_GENDER_MALE"
+                                   class="">GENDER_MALE</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#constant_GENDER_FEMALE"
+                                   class="">GENDER_FEMALE</a><br/>
+                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                <em>No protected methods found</em>
+                            </section>
+                            <section class="span4">
+                                <em>No protected properties found</em>
+                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                <a href="../classes/PerfectWorldAPI.html#method_initialize"
+                                   class="">initialize()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_startSession"
+                                   class="">startSession()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_verifyFingerprint" class="">verifyFingerprint()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_setFingerprint" class="">setFingerprint()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_setSessionVariable" class="">setSessionVariable()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_getUserFingerprint" class="">getUserFingerprint()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_getFingerprint" class="">getFingerprint()</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#method_getSessionVariable" class="">getSessionVariable()</a><br/>
+                            </section>
+                            <section class="span4">
+                                <a href="../classes/PerfectWorldAPI.html#property__database"
+                                   class="">$_database</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#property__userData"
+                                   class="">$_userData</a><br/>
+                                <a href="../classes/PerfectWorldAPI.html#property__charData"
+                                   class="">$_charData</a><br/>
+                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                    <span class="label label-info">final</span>
+
+
+                    <dl>
+                        <dt>File</dt>
+                        <dd><a href="../files/includes.classPerfectWorldAPI.html">
+                            <div class="path-wrapper">includes\classPerfectWorldAPI.php</div>
+                        </a></dd>
+                        <dt>Package</dt>
+                        <dd>
+                            <div class="namespace-wrapper">Default</div>
+                        </dd>
+                        <dt>Class hierarchy</dt>
+                        <dd class="hierarchy">
+                            <div class="namespace-wrapper">\PerfectWorldAPI</div>
+                        </dd>
+
+
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                <p>Nicholas R. Grant a.k.a. &quot;Goodlookinguy&quot;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                <p>2/17/2012</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                <p>NRGsoft (c) 2003-2012</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <a id="constants" name="constants"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Constants</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DATABASE_HOST" name="constant_DATABASE_HOST" class="anchor"></a>
+                    <article id="constant_DATABASE_HOST" class="constant">
+                        <h3 class="">DATABASE_HOST</h3>
+                        <pre class="signature">DATABASE_HOST</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DATABASE_USERNAME" name="constant_DATABASE_USERNAME" class="anchor"></a>
+                    <article id="constant_DATABASE_USERNAME" class="constant">
+                        <h3 class="">DATABASE_USERNAME</h3>
+                        <pre class="signature">DATABASE_USERNAME</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DATABASE_PASSWORD" name="constant_DATABASE_PASSWORD" class="anchor"></a>
+                    <article id="constant_DATABASE_PASSWORD" class="constant">
+                        <h3 class="">DATABASE_PASSWORD</h3>
+                        <pre class="signature">DATABASE_PASSWORD</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_DATABASE_NAME" name="constant_DATABASE_NAME" class="anchor"></a>
+                    <article id="constant_DATABASE_NAME" class="constant">
+                        <h3 class="">DATABASE_NAME</h3>
+                        <pre class="signature">DATABASE_NAME</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_SESSION_NAME" name="constant_SESSION_NAME" class="anchor"></a>
+                    <article id="constant_SESSION_NAME" class="constant">
+                        <h3 class="">SESSION_NAME</h3>
+                        <pre class="signature">SESSION_NAME</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_SESSION_FINGERPRINT" name="constant_SESSION_FINGERPRINT" class="anchor"></a>
+                    <article id="constant_SESSION_FINGERPRINT" class="constant">
+                        <h3 class="">SESSION_FINGERPRINT</h3>
+                        <pre class="signature">SESSION_FINGERPRINT</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_SESSION_USER_ID" name="constant_SESSION_USER_ID" class="anchor"></a>
+                    <article id="constant_SESSION_USER_ID" class="constant">
+                        <h3 class="">SESSION_USER_ID</h3>
+                        <pre class="signature">SESSION_USER_ID</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_SESSION_CHAR_ID" name="constant_SESSION_CHAR_ID" class="anchor"></a>
+                    <article id="constant_SESSION_CHAR_ID" class="constant">
+                        <h3 class="">SESSION_CHAR_ID</h3>
+                        <pre class="signature">SESSION_CHAR_ID</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_SESSION_IS_GM" name="constant_SESSION_IS_GM" class="anchor"></a>
+                    <article id="constant_SESSION_IS_GM" class="constant">
+                        <h3 class="">SESSION_IS_GM</h3>
+                        <pre class="signature">SESSION_IS_GM</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_MSG_MALFORMED_QUERY" name="constant_MSG_MALFORMED_QUERY" class="anchor"></a>
+                    <article id="constant_MSG_MALFORMED_QUERY" class="constant">
+                        <h3 class="">MSG_MALFORMED_QUERY</h3>
+                        <pre class="signature">MSG_MALFORMED_QUERY</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_MSG_SESSION_COLLISION" name="constant_MSG_SESSION_COLLISION" class="anchor"></a>
+                    <article id="constant_MSG_SESSION_COLLISION" class="constant">
+                        <h3 class="">MSG_SESSION_COLLISION</h3>
+                        <pre class="signature">MSG_SESSION_COLLISION</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_GENDER_MALE" name="constant_GENDER_MALE" class="anchor"></a>
+                    <article id="constant_GENDER_MALE" class="constant">
+                        <h3 class="">GENDER_MALE</h3>
+                        <pre class="signature">GENDER_MALE</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="constant_GENDER_FEMALE" name="constant_GENDER_FEMALE" class="anchor"></a>
+                    <article id="constant_GENDER_FEMALE" class="constant">
+                        <h3 class="">GENDER_FEMALE</h3>
+                        <pre class="signature">GENDER_FEMALE</pre>
+                        <p><em></em></p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+
+            <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="property_Instance" name="property_Instance" class="anchor"></a>
+                    <article class="property">
+                        <h3 class="public ">$Instance</h3>
+                        <pre class="signature">$Instance : \PerfectWorldAPI</pre>
+                        <p><em>Singleton instance of PerfectWorldAPI</em></p>
+
+
+                        <h4>Type</h4>
+                        <a href="../classes/PerfectWorldAPI.html">\PerfectWorldAPI</a>
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="property__database" name="property__database" class="anchor"></a>
+                    <article class="property">
+                        <h3 class="private ">$_database</h3>
+                        <pre class="signature">$_database : \MonkeyDatabase</pre>
+                        <p><em>Instance of MonkeyDatabase</em></p>
+
+
+                        <h4>Type</h4>
+                        <a href="../classes/MonkeyDatabase.html">\MonkeyDatabase</a>
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="property__userData" name="property__userData" class="anchor"></a>
+                    <article class="property">
+                        <h3 class="private ">$_userData</h3>
+                        <pre class="signature">$_userData : </pre>
+                        <p><em></em></p>
+
+
+                        <h4>Type</h4>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="property__charData" name="property__charData" class="anchor"></a>
+                    <article class="property">
+                        <h3 class="private ">$_charData</h3>
+                        <pre class="signature">$_charData : </pre>
+                        <p><em></em></p>
+
+
+                        <h4>Type</h4>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+
+            <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method___construct" name="method___construct" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">__construct()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">__construct() : void</pre>
+                        <p><em>Class constructor</em></p>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_Instance" name="method_Instance" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">Instance()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">Instance() : \PerfectWorldAPI</pre>
+                        <p><em>Returns singleton instance of class</em></p>
+
+
+                        <h4>Returns</h4>
+                        <a href="../classes/PerfectWorldAPI.html">\PerfectWorldAPI</a>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <span class="label label-info">static</span>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_PrintSessionDebugData" name="method_PrintSessionDebugData" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">PrintSessionDebugData()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">PrintSessionDebugData() : void</pre>
+                        <p><em>Print session debug information</em></p>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_AddUser" name="method_AddUser" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">AddUser()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">AddUser(string  <span class="argument">$username</span>, string  <span
+                                class="argument">$password</span>, string  <span class="argument">$email</span>, string  <span
+                                class="argument">$question = &#039;&#039;</span>, string  <span class="argument">$answer = &#039;&#039;</span>, string  <span
+                                class="argument">$realName = &#039;&#039;</span>, integer  <span class="argument">$gender</span>, string  <span
+                                class="argument">$number = &#039;0&#039;</span>, string  <span class="argument">$country = &#039;0&#039;</span>, string  <span
+                                class="argument">$city = &#039;0&#039;</span>, string  <span class="argument">$address = &#039;0&#039;</span>, string  <span
+                                class="argument">$postalcode = &#039;0&#039;</span>, integer  <span class="argument">$birthday</span>) </pre>
+                        <p><em>Add user to Perfect World database</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$username</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$password</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$email</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$question</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$answer</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$realName</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>integer</td>
+                                <td>$gender</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$number</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$country</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$city</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$address</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$postalcode</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>integer</td>
+                                <td>$birthday</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/13/2012, <p>Severe Bug Fix (...)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_UsernameIsValid" name="method_UsernameIsValid" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">UsernameIsValid()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">UsernameIsValid(string  <span
+                                class="argument">$username</span>) : boolean</pre>
+                        <p><em>Checks if username is valid.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$username</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_UsernameExists" name="method_UsernameExists" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">UsernameExists()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">UsernameExists(string  <span
+                                class="argument">$username</span>) : boolean</pre>
+                        <p><em>Check if username already exists in database.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$username</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_EmailIsValid" name="method_EmailIsValid" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">EmailIsValid()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">EmailIsValid(string  <span class="argument">$email</span>) : boolean</pre>
+                        <p><em>Checks if the input e-mail is valid.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$email</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/13/2012, <p>Bug Fix</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_EmailExists" name="method_EmailExists" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">EmailExists()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">EmailExists(string  <span class="argument">$email</span>) : boolean</pre>
+                        <p><em>Check if e-mail exists.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$email</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/13/2012
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_SetPassword" name="method_SetPassword" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">SetPassword()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">SetPassword(string  <span class="argument">$username = &#039;&#039;</span>, string  <span
+                                class="argument">$password</span>, string  <span class="argument">$oldPassword = &#039;&#039;</span>) : boolean</pre>
+                        <p><em>Sets a password for an account. This can be useful for password resets. If you have them
+                            input an old
+                            password, be sure to check that the old password length isn&#039;t 0. Otherwise they&#039;ll
+                            be able to overwrite
+                            the password without inputting an old password. This isn&#039;t a bug in the API, it&#039;s
+                            by design.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$username</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$password</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$oldPassword</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetUsername" name="method_GetUsername" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetUsername()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetUsername(  <span
+                                class="argument">$userID</span>) : string</pre>
+                        <p><em>Returns logged in username. If user is not logged in, empty string is returned.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td></td>
+                                <td>$userID</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetUserData" name="method_GetUserData" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetUserData()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetUserData(integer  <span class="argument">$userID</span>,   <span
+                                class="argument">$forceUpdate = false</span>) : mixed</pre>
+                        <p><em>Get user&#039;s data based on ID or currently logged in account. If the data has already
+                            been
+                            accessed, it will return that unless forceUpdate is set to true. If empty userID and user
+                            is not logged in, function returns false.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$userID</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>$forceUpdate</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        mixed
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_IsLoggedIn" name="method_IsLoggedIn" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">IsLoggedIn()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">IsLoggedIn() : boolean</pre>
+                        <p><em>Returns true or false on whether or not the user is logged in.</em></p>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetUserID" name="method_GetUserID" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetUserID()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetUserID() : integer</pre>
+                        <p><em>Get logged in user ID</em></p>
+
+
+                        <h4>Returns</h4>
+                        integer
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_AddGMByCharName" name="method_AddGMByCharName" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">AddGMByCharName()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">AddGMByCharName(string  <span
+                                class="argument">$charname</span>) : boolean</pre>
+                        <p><em>Alias of AddGM</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$charname</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                        <dt>See also</dt>
+                        <dd><a href="../classes/PerfectWorldAPI.html#method_AddGM"><span class="namespace-wrapper">\PerfectWorldAPI::AddGM()</span></a>
+                        </dd>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_AddGM" name="method_AddGM" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">AddGM()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">AddGM(string  <span class="argument">$charname</span>) : boolean</pre>
+                        <p><em>Gives a user GM permissions based on roles.role_name (not users.name).</em></p>
+                        <p>Returns true or false on whether or not query succeeded.</p>
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$charname</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/13/2012, <p>Fixed</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_AddGMByID" name="method_AddGMByID" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">AddGMByID()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">AddGMByID(string  <span class="argument">$userID</span>) : boolean</pre>
+                        <p><em>Gives a user GM permissions based on user ID
+                            Returns true or false on whether or not query succeeded.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$userID</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_AddGMByUsername" name="method_AddGMByUsername" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">AddGMByUsername()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">AddGMByUsername(string  <span
+                                class="argument">$username</span>) : boolean</pre>
+                        <p><em>Gives a user GM permissions based on user ID
+                            Returns true or false on whether or not query succeeded.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$username</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_Login" name="method_Login" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">Login()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">Login(string  <span class="argument">$username</span>, string  <span
+                                class="argument">$password</span>, string  <span
+                                class="argument">$email = &#039;&#039;</span>) </pre>
+                        <p><em>Login to an account. E-Mail parameter is optional. If you plan to use the e-mail
+                            parameter,
+                            make sure to check if the e-mail length is greater than 0, otherwise it will bypass the
+                            e-mail
+                            check and allow the user in with just username and password.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$username</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$password</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$email</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_SetLogin" name="method_SetLogin" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">SetLogin()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">SetLogin(string  <span class="argument">$userID</span>, boolean  <span
+                                class="argument">$isGM = false</span>) : void</pre>
+                        <p><em>Set login for user. Do NOT use this to log into account.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$userID</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>boolean</td>
+                                <td>$isGM</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_LoginByEmail" name="method_LoginByEmail" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">LoginByEmail()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">LoginByEmail(string  <span class="argument">$email</span>, string  <span
+                                class="argument">$password</span>) </pre>
+                        <p><em>Login to an account by e-mail address.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$email</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>$password</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/16/2012, <p>Query Bug Fix + Bug Fix</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_IsGM" name="method_IsGM" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">IsGM()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">IsGM() : boolean</pre>
+                        <p><em>Returns true or false on whether or not the user is a GM</em></p>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_Logout" name="method_Logout" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">Logout()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">Logout() : boolean</pre>
+                        <p><em>Logs out the character by destorying the session variables. The user remains in the
+                            same session until they either delete the cookie, restart their browser, or change
+                            their session ID.</em></p>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_SetCharacter" name="method_SetCharacter" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">SetCharacter()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">SetCharacter(integer  <span class="argument">$charID</span>) : boolean</pre>
+                        <p><em>Set character ID for account. If set character fails, function will return false.</em>
+                        </p>
+                        <p>If the function succeeds, it will return true and the character ID will be set.</p>
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$charID</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_FillUserCharData" name="method_FillUserCharData" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">FillUserCharData()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">FillUserCharData(integer  <span
+                                class="argument">$userID</span>) : boolean</pre>
+                        <p><em>Fill all character data from given user ID. This will not check if data
+                            is stored already or not.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$userID</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetUserCharIDs" name="method_GetUserCharIDs" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetUserCharIDs()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetUserCharIDs(integer  <span
+                                class="argument">$userID</span>) : mixed</pre>
+                        <p><em>Returns an array of characters from specified user ID. If no ID is put, function
+                            grabs characters from currently logged in account. If empty userID and user is
+                            not logged in, function returns false.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$userID</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        mixed
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetGMList" name="method_GetGMList" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetGMList()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetGMList() : mixed</pre>
+                        <p><em>Returns an array map of GMs.</em></p>
+                        <p>Key 'GM Name' returns GM's Name
+                            Key 'Online' returns true or false to online status</p>
+
+
+                        <h4>Returns</h4>
+                        mixed
+                        &mdash; <p>array</p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetOnlineCharList" name="method_GetOnlineCharList" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public deprecated">GetOnlineCharList()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetOnlineCharList() : mixed</pre>
+                        <p><em>Returns an array of online user&#039;s names and IDs</em></p>
+
+
+                        <h4>Returns</h4>
+                        mixed
+                        &mdash; <p>array</p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <aside class="alert alert-block alert-error">
+                        <h4>Deprecated</h4>
+
+                    </aside>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/22/2012, <p>Deprecated</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetOnlineCharacterList" name="method_GetOnlineCharacterList" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public deprecated">GetOnlineCharacterList()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetOnlineCharacterList() : mixed</pre>
+                        <p><em>Returns an array of online user&#039;s names and IDs</em></p>
+
+
+                        <h4>Returns</h4>
+                        mixed
+                        &mdash; <p>array</p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <aside class="alert alert-block alert-error">
+                        <h4>Deprecated</h4>
+
+                    </aside>
+                    <dl>
+                        <dt>See also</dt>
+                        <dd><a href="../classes/PerfectWorldAPI.html#method_GetOnlineCharList"><span
+                                class="namespace-wrapper">\PerfectWorldAPI::GetOnlineCharList()</span></a></dd>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetCharList" name="method_GetCharList" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetCharList()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetCharList(integer  <span class="argument">$limit</span>, integer  <span
+                                class="argument">$page</span>) : mixed</pre>
+                        <p><em>Get an array of all character&#039;s names and IDs (This can return a massive amount of
+                            data)</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$limit</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>integer</td>
+                                <td>$page</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        mixed
+                        &mdash; <p>array</p>
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                2/16/2012, <p>Added $page and $limit parameters</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetCharacterName" name="method_GetCharacterName" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetCharacterName()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetCharacterName(  <span class="argument">$charID</span>) : string</pre>
+                        <p><em>Returns currently selected character&#039;s name. If no character is selected, empty
+                            string is returned.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td></td>
+                                <td>$charID</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                        <h4>Examples</h4>
+                        <h5></h5>
+                        <pre class="pre-scrollable">** File not found :  **</pre>
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetCharData" name="method_GetCharData" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetCharData()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetCharData(integer  <span class="argument">$charID</span>,   <span
+                                class="argument">$forceUpdate = false</span>) : mixed</pre>
+                        <p><em>Get character&#039;s data based on ID or currently logged in account character. If the
+                            data
+                            has already been accessed, it will return that unless forceUpdate is set to true. If
+                            empty userID and user is not logged in, function returns false.</em></p>
+
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>integer</td>
+                                <td>$charID</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>$forceUpdate</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        mixed
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_GetCharID" name="method_GetCharID" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="public ">GetCharID()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">GetCharID() : integer</pre>
+                        <p><em>Get character ID if character is set. 0 means that no character is set.</em></p>
+
+
+                        <h4>Returns</h4>
+                        integer
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_initialize" name="method_initialize" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">initialize()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">initialize() : void</pre>
+                        <p><em>Initialization components run here</em></p>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_startSession" name="method_startSession" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">startSession()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">startSession() : void</pre>
+                        <p><em>Attempt to start user session (cookie blocks will prevent this from starting)</em></p>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>
+                                bug
+                            </th>
+                            <td>
+                                <p>A bug regarding the session not being properly destroyed has been fixed</p>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_verifyFingerprint" name="method_verifyFingerprint" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">verifyFingerprint()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">verifyFingerprint() : boolean</pre>
+                        <p><em>Verify session fingerprint against user fingerprint. Returns true if
+                            fingerprint is the same. Returns false if fingerprint mismatch.</em></p>
+
+
+                        <h4>Returns</h4>
+                        boolean
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_setFingerprint" name="method_setFingerprint" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">setFingerprint()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">setFingerprint() : void</pre>
+                        <p><em>Set session fingerprint</em></p>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_setSessionVariable" name="method_setSessionVariable" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">setSessionVariable()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">setSessionVariable(string  <span
+                                class="argument">$variable</span>, mixed  <span
+                                class="argument">$value</span>) : void</pre>
+                        <p><em>Set a session variable.</em></p>
+                        <p>NOTE: There is mild session data hiding for shared hosts. Beware using
+                            this on anything but a dedicated host. As the data could be unhidden
+                            fairly easy by another user.</p>
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$variable</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>mixed</td>
+                                <td>$value</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_getUserFingerprint" name="method_getUserFingerprint" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">getUserFingerprint()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">getUserFingerprint() : string</pre>
+                        <p><em>Returns current user fingerprint (Not session fingerprint)</em></p>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_getFingerprint" name="method_getFingerprint" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">getFingerprint()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">getFingerprint() : string</pre>
+                        <p><em>Return session fingerprint</em></p>
+
+
+                        <h4>Returns</h4>
+                        string
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <a id="method_getSessionVariable" name="method_getSessionVariable" class="anchor"></a>
+                    <article class="method">
+                        <h3 class="private ">getSessionVariable()</h3>
+                        <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"
+                           style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                        <pre class="signature" style="margin-right: 54px;">getSessionVariable(string  <span
+                                class="argument">$variable</span>) : mixed</pre>
+                        <p><em>Get a session variable.</em></p>
+                        <p>NOTE: There is mild session data hiding for shared hosts. Beware using
+                            this on anything but a dedicated host. As the data could be unhidden
+                            fairly easy by another user.</p>
+
+                        <h4>Parameters</h4>
+                        <table class="table table-condensed table-hover">
+                            <tr>
+                                <td>string</td>
+                                <td>$variable</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+
+                        <h4>Returns</h4>
+                        mixed
+
+                    </article>
+                </div>
+                <aside class="span4 detailsbar">
+                    <h1><i class="icon-arrow-down"></i></h1>
+                    <dl>
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="2"><em>None found</em></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label"
+         aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">classPerfectWorldAPI.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/includes\classPerfectWorldAPI.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr/>
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on October 19th, 2018 at 04:40.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
