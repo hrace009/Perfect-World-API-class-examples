@@ -1,15 +1,19 @@
 <?php
 /* -------------------------------------------------- */
-if (!defined('ROOT'))
-    define('ROOT', '/var/www/');
+if ( !defined('ROOT') )
+	define('ROOT', __DIR__);
 /* -------------------------------------------------- */
-$folder = ROOT . "libraries/Monkey/";
+define('T', true);
+define('F', false);
 
-require_once($folder . "MonkeyList.php");
-require_once($folder . "MonkeyMap.php");
-require_once($folder . "MonkeyStack.php");
-require_once($folder . "MonkeyDatabase.php");
-require_once($folder . "MonkeyFilter.php");
-require_once($folder . "MonkeyString.php");
+$folder = ROOT . "/Monkey";
 
-unset($folder);
+require_once( $folder . '/MonkeyList.php' );
+require_once( $folder . '/MonkeyMap.php' );
+require_once( $folder . '/MonkeyStack.php' );
+require_once( $folder . '/MonkeySession.php' );
+require_once( $folder . '/MonkeyMarkdown.php' );
+require_once( $folder . '/MonkeyDatabase.php' );
+require_once( $folder . '/MonkeyFilter.php' );
+
+unset( $folder );

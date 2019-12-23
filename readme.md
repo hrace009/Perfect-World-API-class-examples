@@ -79,4 +79,7 @@ You can. Whether or not I'll be able to accomplish said feature is questionable.
 
 11/20/2012
 - Fixed error that could cause session to endlessly error-out until session cookie was deleted or expired
+
+12/23/2019
+- Add new monkey libs 2019
 ```
