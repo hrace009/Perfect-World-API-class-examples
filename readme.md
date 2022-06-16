@@ -1,7 +1,7 @@
 # Perfect World API class + examples
 A php script to use on Perfect World gaming environment.
 
-Original made by <a href="http://forum.ragezone.com/members/861743.html">Goodlookinguy</a> on <a href="http://forum.ragezone.com/f694/php-perfect-world-api-class-818826/">RageZone</a>, or <a href="https://github.com/Goodlookinguy">Goodlookinguy</a> at Github
+Original made by <a href="http://forum.ragezone.com/members/861743.html">Goodlookinguy</a> on <a href="http://forum.ragezone.com/f694/php-perfect-world-api-class-818826/">RageZone</a>, or [Nicholas Grant](https://github.com/TacoOblivion) at Github
 
 Documentation Click [here](https://hrace009.github.io/Perfect-World-API-class-examples/docs/)
 
